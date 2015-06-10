@@ -1,0 +1,84 @@
+var rowFirst = Ext.get(Ext.DomQuery.selectNode("#regds tr:nth(2)"));
+rowFirst =this.retCommodityBlur(rowFirst);  // retCommodityBlur
+this.rows.push(rowFirst);
+this.nowRow = this.lastRow = rowFirst;
+this.nowRow[4].on('focus', this.addNextRow, this);	// addNextRow
+
+retCommodityBlure:function(row){
+	var nc1 = this.getInputChild(row, 1);
+	var nc2 = this.getInputChild(row, 2);
+	var nc3 = this.getInputChild(row, 3);
+	var nc4 = this.getInputChild(row, 4);
+	var nc5 = this.getInputChild(row, 5);
+
+	nc2.on('blur', this.onComputeOne, row, {otc:this});
+	nc3.on('blur', this.onComputeOne, row, {otc:this});
+
+	return [nc1, nc2, nc3, nc4, nc5, row]
+}
+
+getInputChild:function(row, i){
+	return row.child((i == 1? 'td:first-child':'td:nth-child('+i+')')+' input');
+}
+
+onComputeOne : function(e, t, o){
+	var otc = o.otc;
+	var d2 = otc.getInputChild(this, 2);
+	var d3 = otc.getInputChild(this, 3);
+	var d4 = otc.getInputChild(this, 4);
+
+	var v2 =parseFloat(d2.dom.vaue),
+		v3 = d3.getValue(true);
+	if(!isNaN(v2) && !isNaN(v3)){
+		var v1 = Math.round(v2*v3*100) / 100;
+		d4.dom.value = v1;
+		otc.computeTotal();
+	}
+}
+
+addNextRow : function(){
+	if(this.nowRow && this.nowRow[3].dom.value){
+		var newRow = this.insertOneRow();
+		this.newRow = this.retCommodityBlur(newRow);
+		this.nowRow = this.newRow;
+		this.lastRow[4].un('focus', this.addNextRow, this);
+		this.nowRow[4].on('focus', this.addNextRow, this);
+	}
+}
+
+retBlur : function(){
+	this.returnMoney.on('focus', this.deleteRow, this);
+	this.returnMoney.on('blur', this.computeTotal, this);
+	this.otherMoenty.on('blur', this.computeTotal, this);
+}
+
+deleteRow : function(){
+	if(!this.nowRow) return;
+	if(!this.nowRow[3].dom.value){
+		Ext.removeNode(this.nowRow[5].dom);
+		this.rows.remove(this.nowRow);
+		this.nowRow = this.lastRow;
+		this.lastRow = this.findLastRow(this.nowRow);
+		this.nowRow[4].on('focus', this.addNextRow, this);
+	}
+}
+
+computeTotal: function(){
+	var sum = 0;
+	var returnMoney = parseFloat(htis.returnMoney.dom.value);
+	var otherMoney = parseFloat(this.otherMoney.dom.value);
+	var retCommoditys = Ext.select('#reggds tr:not(#retfirstTr) td:nth-child(4) input');
+
+	retCommoditys.each(function(){
+		if(this.dom.value){
+			var amount = parseFloat(this.dom.value);
+			if(!isNaN(amount)){
+				sum+=amount;
+			}
+		}
+	});
+
+	if(!isNaN(returnMoney)) sum+= returnMoney;
+	if(!isNaN(otherMoney)) sum+= otherMoney;
+	this.totalMoney.dom.value = sum;
+}
