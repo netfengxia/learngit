@@ -1,3 +1,4 @@
+// 全是片断
 var Fx = {changeSize:function(o){
 	var el = o.el; cache = {};
 	if(el && el.tagName){
