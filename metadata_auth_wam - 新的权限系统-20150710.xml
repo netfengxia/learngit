@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE domain SYSTEM "Metadata_Auth_Main.dtd">
+<domain id="admin" subsystem="wam">
+	<resource-category key="wam_base_manage" name="权限管理	" desc="权限管理">
+		<resource key="wam_base_manage" name="基本权限管理	" desc="基本权限管理	">
+				<operation key="ADMIN-ROLE" name="角色管理" desc="角色管理">
+					<address name="列出角色组"  url="/rolegroup/rolegroup!groupTree.action"/>
+					<address name="列出角色组中的角色" url="/rolegroup/rolegroup!listRolesByGroupId.action"/>
+						
+					<address name="查询角色的现有权限信息"  url="/auth/findRoleById.action"/>
+					<address name="查询资源分类树"		    url="/auth/listResourceCategoryTree.action"/>
+					<address name="查询系统根节点权限内容 "  url="/auth/authConfig!listResourceDomains.action"/>
+					<address name="查询角色对应的扩展信息"  url="/rolegroup/rolegroup!detailRoleExtend.action"/>
+									
+					<address name="角色管理页面" url="/auth/rolegroup/roleGroup.jsp"/>
+				
+					 <address name="创建角色" url="/rolegroup/rolegroup!createRole.action"/>
+					 <address name="创建角色页面" url="/auth/rolegroup/roleAdd.jsp"/>
+					
+					 <address name="更新角色" url="/rolegroup/rolegroup!updateRole.action"/>
+					 <address name="更新角色页面" url="/auth/rolegroup/roleModify.jsp"/>
+					
+					 <address name="克隆角色" url="/rolegroup/rolegroup!cloneRole.action"/>
+					 <address name="克隆角色页面 " url="/auth/rolegroup/roleClone.jsp"/>
+					
+					 <address name="删除角色" url="/rolegroup/rolegroup!deleteRole.action"/>
+					
+					<address name="创建角色组" url="/rolegroup/rolegroup!addRoleGroup.action"/>
+					<address name="删除角色组 " url="/rolegroup/rolegroup!deleteRoleGroup.action"/>
+					<address name="修改角色组名称 " url="/rolegroup/rolegroup!updateRoleGroupName.action"/>
+				</operation>
+				<operation key="ADMIN_AGENT-AGENT" name="代理商管理" desc="代理商管理">
+					<address name="代理商列表jsp页面" url="/agent/agentList.jsp" />
+					<address name="代理商列表Action" url="/agent/agent!List.action" />
+					<address name="代理商详情jsp页面" url="/agent/agentDetail.jsp" />
+					<address name="代理商详情Action" url="/agent/agent!Detail.action" />
+					<address name="代理商角色Action" url="/agent/agent!ListRole.action" />
+					
+					<address name="代理商新增jsp页面" url="/agent/agentAdd.jsp"/>
+					<address name="代理商新增Action" url="/agent/agent!Insert.action"/>
+					
+					<address name="代理商修改jsp页面" url="/agent/agentModify.jsp"/>
+					<address name="代理商修改Action" url="/agent/agent!Update.action"/>				
+					<address name="代理商冻结Action" url="/agent/agent!Frozen.action" />
+					<address name="代理商解冻Action" url="/agent/agent!Unfrozen.action" />
+					
+					<address name="代理商删除Action" url="/agent/agent!Delete.action"/>	
+				</operation>
+				
+				<operation key="AGENT-DISTRIBUTOR" name="经销商管理" desc="经销商管理">
+					<address name="经销商列表jsp页面" url="/distributor/distributorList.jsp" />
+					<address name="经销商列表Action" url="/distributor/distributor!List.action" />
+					<address name="经销商详情jsp页面" url="/distributor/distributorDetail.jsp" />
+					<address name="经销商详情Action" url="/distributor/distributor!Detail.action" />
+					<address name="经销商角色列表Action" url="/distributor/distributor!ListRole.action" />
+	
+					<address name="经销商商家录入按日统计Action" url="/distributor/distributor!EnterSellersSumByDay.action" />
+					<address name="经销商商家录入统计Action" url="/distributor/distributor!EnterSellersSum.action" />
+					<address name="经销商商家录入统计JSP" url="/distributor/enterSellersSum.jsp" />
+	
+					<address name="经销商商家录入按日统计导出Action" url="/distributor/distributor!exportSellersSumByDay.action" />
+					<address name="经销商商家录入统计导出Action" url="/distributor/distributor!exportSellersSum.action" />
+					
+					<address name="经销商新增jsp页面" url="/distributor/distributorAdd.jsp"/>
+					<address name="经销商新增Action" url="/distributor/distributor!Insert.action"/>	
+					
+					<address name="经销商修改jsp页面" url="/distributor/distributorModify.jsp"/>
+					<address name="经销商修改Action" url="/distributor/distributor!Update.action"/>					
+					<address name="经销商解冻Action" url="/distributor/distributor!Frozen.action" />
+					<address name="经销商冻结Action" url="/distributor/distributor!Unfrozen.action" />
+					
+					<address name="经销商删除Action" url="/distributor/distributor!Delete.action"/>
+				</operation>
+				<operation key="AGENT_DISTRIBUTOR-SELLER" name="商家管理" desc="商家管理">
+					<address name="商家列表jsp页面" url="/seller/sellerList.jsp" />
+					<address name="商家列表Action" url="/seller/seller!List.action" />
+					<address name="商家角色Action" url="/seller/seller!ListRole.action"/>
+				
+					<address name="商家新增jsp页面" url="/seller/sellerAdd.jsp"/>
+					<address name="商家新增Action" url="/seller/seller!Insert.action"/>					
+					<address name="最大商家Action" url="/seller/seller!queryNumOfSeller_Remainder.action"/>	
+					
+					<address name="商家修改jsp页面" url="/seller/sellerModify.jsp"/>
+					<address name="商家修改Action" url="/seller/seller!Update.action"/>				
+					<address name="商家修改单项功能用Action" url="/seller/seller!UpdateSingle.action"/>				
+					<address name="商家冻结Action" url="/seller/seller!Frozen.action" />
+					<address name="商家解冻Action" url="/seller/seller!Unfrozen.action" />
+					<address name="商家手机认证Action" url="/seller/seller!Smsauth.action" />
+					<address name="商家首显选择" url="/selector/SellerIndexShowSelect.jsp" />
+					<address name="商家支付方式Action" url="/payway/payway4Seller!List.action" />
+					<address name="商家支付方式Jsp" url="/selector/SellerPayWaySelect.jsp" />
+					<address name="支付方式列表Action" url="/payway/payway!List.action" />
+					<address name="商家支付方式修改Action" url="/payway/payway4Seller!Update.action" />
+					<address name="商家删除Action" url="/seller/seller!Delete.action"/>
+					
+					<address name="商家模块列表jsp" url="/seller/sellerModuleList.jsp" />
+					<address name="商家模块新增jsp" url="/seller/sellerModuleAdd.jsp" />
+					<address name="商家模块修改jsp" url="/seller/sellerModuleModify.jsp" />
+	
+					<address name="商家商品分类树获取Action" url="/tuangou/commodityType!listTypeTreeBySellerId.action"/>
+					<address name="商家模块列出指定商家的模块列表Action" url="/seller/module/module!listSellerModule.action"/>
+					<address name="商家模块列出系统中所有模块列表Action" url="/seller/module/module!listAllModule.action"/>
+					<address name="商家模块列出指定模块下TemplateClass列表Action" url="/seller/module/module!listTemplateClass.action"/>
+					<address name="商家模块列出指定TemplateClass下Template列表的Action" url="/seller/module/module!listTemplate.action"/>
+					<address name="商家模块列出指定Template下Data列表的Action" url="/seller/module/module!listData.action"/>
+					<address name="商家模块新增Action" url="/seller/module/module!Insert.action"/>
+					<address name="商家模块详情Action" url="/seller/module/module!Detail.action"/>
+					<address name="商家模块修改Action" url="/seller/module/module!Update.action"/>
+					<address name="商家模块删除Action" url="/seller/module/module!Delete.action"/>
+				</operation>
+				<operation key="AGENT_DISTRIBUTOR-SELLERAUDIT" name="商家信息审核" desc="商家信息审核">
+					<address name="商家审核Action" url="/seller/seller!Pass.action" />
+					<address name="商家不审核Action" url="/seller/seller!Nopass.action" />
+				</operation>
+				<operation key="ADMIN-USER" name="用户管理" desc="用户管理">
+					<address name="用户列表jsp页面" url="/user/userList.jsp" />
+					<address name="用户列表Action" url="/user/user!List.action" />
+					<address name="用户详情jsp页面" url="/user/userDetail.jsp" />
+					<address name="用户详情Action" url="/user/user!Detail.action" />
+
+					<address name="用户新增jsp页面" url="/user/userAdd.jsp"/>
+					<address name="用户新增Action" url="/user/user!Insert.action"/>	
+					<address name="用户修改jsp页面" url="/user/userModify.jsp"/>
+					<address name="用户修改Action" url="/user/user!Update.action"/>	
+					<address name="用户删除Action" url="/user/user!Delete.action"/>	
+				</operation>
+				<operation key="ADMIN_AGENT-BUSINESSZONE" name="商圈管理" desc="商圈管理">
+					<address name="商圈列表jsp页面" url="/businesszone/businesszoneList.jsp" />
+					<address name="商圈列表Action" url="/businesszone/businesszone!List.action" />
+					<address name="商圈详情jsp页面" url="/businesszone/businesszoneDetail.jsp" />
+					<address name="商圈详情Action" url="/businesszone/businesszone!Detail.action" />
+					<address name="商圈新增jsp页面" url="/businesszone/businesszoneAdd.jsp"/>
+					<address name="商圈新增Action" url="/businesszone/businesszone!Insert.action"/>	
+					
+					<address name="商圈修改jsp页面" url="/businesszone/businesszoneModify.jsp"/>
+					<address name="商圈修改Action" url="/businesszone/businesszone!Update.action"/>
+					
+					<address name="商圈删除Action" url="/businesszone/businesszone!Delete.action"/>	
+				</operation>
+				<operation key="ADMIN_APP" name="APP管理" desc="">
+					<address name="app列表jsp页面" url="/app/appList.jsp" />
+					<address name="app列表Action" url="/app/app!List.action" />
+					<address name="app详情jsp页面" url="/app/appDetail.jsp" />
+					<address name="app详情Action" url="/app/app!Detail.action" />
+					<address name="app新增jsp页面" url="/app/appAdd.jsp"/>
+					<address name="app新增Action" url="/app/app!Insert.action"/>	
+					<address name="app修改jsp页面" url="/app/appModify.jsp"/>
+					<address name="app修改Action" url="/app/app!Update.action"/>	
+					<address name="app删除Action" url="/app/app!Delete.action"/>	
+				</operation>
+				<operation key="ADMIN_AD" name="广告管理" desc="">
+					<address name="广告列表jsp页面" url="/ad/adList.jsp" />
+					<address name="广告列表Action" url="/ad/ad!List.action" />
+					<address name="广告详情jsp页面" url="/ad/adDetail.jsp" />
+					<address name="广告详情Action" url="/ad/ad!Detail.action" />
+
+					<address name="广告新增jsp页面" url="/ad/adAdd.jsp"/>
+					<address name="广告新增Action" url="/ad/ad!Insert.action"/>
+					
+					<address name="广告新增jsp页面王友良" url="/ad/adAdd-New.jsp"/>
+					<address name="列出指定市下的县区状态Action" url="/ad/Ad!ListCityArea.action"/>
+					<address name="列出广告位的ction" url="/ad/AdPosition!List.action"/>
+					
+					<address name="广告修改jsp页面" url="/ad/adModify.jsp"/>
+					<address name="广告修改Action" url="/ad/ad!Update.action"/>
+					
+					<address name="广告删除Action" url="/ad/ad!Delete.action"/>		
+
+					<address name="广告位列表Action" url="/ad/adPosition!List.action" />
+					<address name="广告位详情Action" url="/ad/adPosition!Detail.action" />
+					
+					<address name="广告位新增Action" url="/ad/adPosition!Insert.action"/>				
+					<address name="广告数容量Action" url="/ad/ad!adallowNumber.action" />
+					
+					<address name="广告位修改Action" url="/ad/adPosition!Update.action"/>	
+					
+					<address name="广告位删除Action" url="/ad/adPosition!Delete.action"/>	
+
+					<address name="选择商家列表的Jsp页面" url="/selector/sellerList.jsp" />
+					<address name="显示商家信息内容的Jsp页面" url="/seller/seller!List.action" />
+					
+					<address name="投放列表jsp页面" url="/ad/adPositionConfirmList.jsp"/>
+					<address name="投放列表Action" url="/ad/ad!adPositionConfirmList.action"/>	
+				</operation>
+				<operation key="ADMIN_AGENT_DISTRIBUTOR_SELLER-ABOUT" name="关于" desc="">
+					<address name="关于列表jsp页面" url="/wamAbout/wamAboutDetail.jsp" />
+					<address name="关于列表Action" url="/common/wamAbout.action" />
+				</operation>
+		</resource>
+		
+		<resource key="wam_shop_manage" name="本店设置" desc="本店设置">
+				<operation key="SELLER-SELFINFO" name="本店信息" desc="本店信息">
+					<address name="本店jsp页面" url="/seller/sellerSelfModify.jsp" />
+					<address name="本店更新Action" url="/seller/seller!UpdateSelf.action" />
+				</operation>
+				<operation key="SELLER-BLACKLIST" name="防蹭网" desc="防蹭网">
+					<address name="防蹭网设置列表jsp页面" url="/seller/blacklistList.jsp" />
+					<address name="防蹭网设置列表Action" url="/blacklist/blacklist!List.action" />
+					<address name="防蹭网设置更新Action" url="/blacklist/blacklist!Update.action" />
+				</operation>
+		</resource>
+		
+		<resource key="wam_product_manage" name="产品管理" desc="产品管理">
+				<operation key="SELLER-TUANGOU" name="团购-团购管理" desc="">
+					<address name="团购列表jsp页面" url="/tuangou/tuangouList.jsp" />
+					<address name="团购列表Action" url="/tuangou/tuangou!List.action" />
+					<address name="商圈列表Action" url="/businesszone/businesszone!ListByCode.action" />
+					<address name="团购新增jsp页面" url="/tuangou/tuangouAdd.jsp"/>
+					<address name="团购新增Action" url="/tuangou/tuangou!Insert.action"/>
+					<address name="商家最大团购数Action" url="/tuangou/tuangou!queryNumOfTuangou_Remainder.action"/>
+					
+					<address name="团购修改jsp页面" url="/tuangou/tuangouModify.jsp"/>
+					<address name="团购修改Action" url="/tuangou/tuangou!Update.action"/>				
+					<address name="团购发布Action" url="/tuangou/tuangou!tuangouPublish.action" />
+					<address name="团购停止Action" url="/tuangou/tuangou!tuangouStop.action" />
+					<address name="团购废除Action" url="/tuangou/tuangou!tuangouCancel.action" />
+					<address name="团购再发布Action" url="/tuangou/tuangou!tuangouRepublish.action" />
+					
+					<address name="团购删除Action" url="/tuangou/tuangou!Delete.action"/>	
+				</operation>
+				<operation key="SELLER-TGRECOMMEND" name="团购-团购推荐" desc="">
+					<address name="推荐列表jsp页面" url="/tuangou/tuangouRecommendList.jsp" />
+					<address name="推荐Action" url="/tuangou/tuangou!Recommend.action" />
+					<address name="推荐列表Action" url="/tuangou/tuangou!RecommendList.action" />
+					<address name="商家详情jsp页面" url="/tuangou/tuangou_sellerDetail.jsp" />
+				</operation>
+				<operation key="SELLER-TGRECOMMENDLIST" name="团购-推荐记录" desc="">
+					<address name="团购认领记录列表jsp页面" url="/log/taskLogList.jsp" />
+					<address name="团购认领记录列表Action" url="/tuangou/tuangou!ListTaskLog.action" />
+				</operation>
+				<operation key="SELLER-COMMODITY" name="商品管理" desc="">
+					<address name="商品列表jsp页面" url="/commodity/commodityList.jsp" />
+					<address name="商品列表Action" url="/tuangou/tuangou!List.action" />
+					<address name="商品详情jsp页面" url="/commodity/commodityDetail.jsp" />	
+					<address name="分类列表Action" url="/tuangou/commodityType!listCommodityTypeTreeSellerSelf.action"/>
+					<address name="分类新增Action" url="/tuangou/commodityType!Insert.action"/>
+					<address name="分类删除Action" url="/tuangou/commodityType!Delete.action"/>
+					<address name="分类新增jsp页面" url="/commodity/commoditytypeList.jsp"/>
+					<address name="分类修改排序Action" url="/tuangou/commodityType!Update.action"/>
+					<address name="团购查询促销标识用Action" url="/tuangou/tuangou!ListPromotion.action" />
+
+					<address name="商品新增jsp页面" url="/commodity/commodityAdd.jsp"/>
+					<address name="商品新增Action" url="/tuangou/tuangou!Insert.action"/>
+					<address name="商家最大团购数Action" url="/tuangou/tuangou!queryNumOfTuangou_Remainder.action"/>
+					
+					<address name="商品修改jsp页面" url="/commodity/commodityModify.jsp"/>
+					<address name="商品修改Action" url="/tuangou/tuangou!Update.action"/>				
+					<address name="商品发布Action" url="/tuangou/tuangou!tuangouPublish.action" />
+					<address name="商品停止Action" url="/tuangou/tuangou!tuangouStop.action" />
+					<address name="商品废除Action" url="/tuangou/tuangou!tuangouCancel.action" />
+					<address name="商品再发布Action" url="/tuangou/tuangou!tuangouRepublish.action" />
+					
+					<address name="商品删除Action" url="/tuangou/tuangou!Delete.action"/>					
+				</operation>
+				<operation key="SELLER-TAOCAO" name="套餐管理" desc="">
+					<address name="套餐列表jsp页面" url="/taocan/taocanList.jsp" />
+					<address name="套餐列表Action" url="/tuangou/tuangou!List.action" />
+					<address name="套餐详情jsp页面" url="/taocan/taocanDetail.jsp" />	
+
+					<address name="套餐新增jsp页面" url="/taocan/taocanAdd.jsp"/>
+					<address name="套餐新增Action" url="/tuangou/tuangou!Insert.action"/>
+					<address name="商家最大团购数Action" url="/tuangou/tuangou!queryNumOfTuangou_Remainder.action"/>
+					
+					<address name="套餐修改jsp页面" url="/taocan/taocanModify.jsp"/>
+					<address name="套餐修改Action" url="/tuangou/tuangou!Update.action"/>				
+					<address name="套餐发布Action" url="/tuangou/tuangou!tuangouPublish.action" />
+					<address name="套餐停止Action" url="/tuangou/tuangou!tuangouStop.action" />
+					<address name="套餐废除Action" url="/tuangou/tuangou!tuangouCancel.action" />
+					<address name="套餐再发布Action" url="/tuangou/tuangou!tuangouRepublish.action" />	
+					
+					<address name="套餐删除Action" url="/tuangou/tuangou!Delete.action"/>	
+				</operation>
+				<operation key="SELLER-EVENT" name="活动管理" desc="">
+					<address name="我的活动详情jsp页面" url="/event/eventDetail.jsp" />
+					<address name="我的活动列表Action" url="/event/event!List.action" />
+					<address name="我的活动jsp页面" url="/event/eventList.jsp" />
+					<address name="我的活动详情Action" url="/event/event!Detail.action" />
+
+					<address name="活动新增jsp页面" url="/event/eventAdd.jsp"/>
+					<address name="活动新增Action" url="/event/event!Insert.action"/>	
+					<address name="我的活动最大活动Action" url="/event/event!queryNumOfEvent_Remainder.action" />
+					
+					<address name="活动修改jsp页面" url="/event/eventModify.jsp"/>
+					<address name="活动修改Action" url="/event/event!Update.action"/>
+					<address name="发布活动Action" url="/event/event!eventPublish.action" />
+					
+					<address name="删除活动Action" url="/event/event!Delete.action"/>
+				</operation>
+				<operation key="SELLER-SHOPINFO" name="商家介绍管理" desc="">
+					<address name="本店介绍jsp页面" url="/shopinfo/shopinfoList.jsp" />
+					<address name="本店介绍Action" url="/seller/shopinfo/shopinfo!List.action" />				
+					<address name="本店介绍详情jsp页面" url="/shopinfo/shopinfoDetail.jsp" />
+					<address name="本店介绍详情Action" url="/seller/shopinfo/shopinfo!Detail.action" />				
+					<address name="本店介绍分类jsp页面" url="/shopinfo/shopinfotypeList.jsp" />
+					<address name="本店介绍分类Action" url="/tuangou/commodityType!listShopInfoTypeTreeSellerSelf.action" />
+
+					<address name="本店介绍新增jsp页面" url="/shopinfo/shopinfoAdd.jsp" />
+					<address name="本店介绍新增Action" url="/seller/shopinfo/shopinfo!Insert.action" />
+					<address name="本店介绍分类新增Action" url="/seller/shopinfo/shopInfoType!Insert.action" />
+					
+					<address name="本店介绍修改jsp页面" url="/shopinfo/shopinfoModify.jsp" />
+					<address name="本店介绍修改Action" url="/seller/shopinfo/shopinfo!Update.action" />		
+					<address name="本店介绍删除Action" url="/seller/shopinfo/shopinfo!Delete.action" />
+					<address name="本店介绍分类修改Action" url="/seller/shopinfo/shopInfoType!Update.action" />
+					<address name="本店介绍分类删除Action" url="/seller/shopinfo/shopInfoType!Delete.action" />
+					<address name="本店介绍发布Action" url="/seller/shopinfo/shopinfo!Publish.action" />
+					<address name="本店介绍重新发布Action" url="/seller/shopinfo/shopinfo!Republish.action" />
+					<address name="本店介绍停止Action" url="/seller/shopinfo/shopinfo!Stop.action" />
+					<address name="本店介绍废止Action" url="/seller/shopinfo/shopinfo!Cancel.action" />
+				</operation>
+		</resource>
+		
+		<resource key="wam_product_audit_manage" name="产品审核" desc="">
+				<operation key="AGENT-TGAUDIT" name="团购审核" desc="">
+					<address name="团购审核jsp页面" url="/tuangou/tuangouCheckList.jsp" />
+					<address name="团购审核Action" url="/tuangou/tuangou!Check.action" />
+					<address name="团购审核列表Action" url="/tuangou/tuangou!CheckList.action" />
+					<address name="团购商家详情jsp页面" url="/tuangou/tuangou_sellerDetail.jsp" />
+					<address name="团购详情jsp页面" url="/tuangou/tuangouDetail4Check.jsp" />
+				</operation>
+				<operation key="AGENT-TGRECOMMENDVALUE" name="团购推荐值" desc="">
+					<address name="团购推荐值列表jsp页面" url="/tuangou/tuangouRecommendValueList.jsp" />
+					<address name="团购推荐值列表Action" url="/tuangou/tuangou!TuangouRecommendValueList.action" />
+					<address name="团购商家详情jsp页面" url="/tuangou/tuangou_sellerDetail.jsp" />
+					
+					<address name="团购推荐值修改jsp页面" url="/tuangou/tuangouRecommendValueModify.jsp"/>
+					<address name="团购推荐值修改Action" url="/tuangou/tuangou!TuangouRecommendValueUpdate.action"/>
+				</operation>
+				<operation key="AGENT-COMMODITYAUDIT" name="商品审核" desc="">
+					<address name="商品审核jsp页面" url="/tuangou/tuangouCheckCommodityList.jsp" />
+					<address name="商品审核Action" url="/tuangou/tuangou!Check.action" />
+					<address name="商品审核列表Action" url="/tuangou/tuangou!CheckList.action" />
+					<address name="商品商家详情jsp页面" url="/tuangou/tuangou_sellerDetail.jsp" />
+					<address name="商品详情jsp页面" url="/tuangou/tuangouDetailCommodityCheck.jsp" />
+				</operation>
+				<operation key="AGENT-TAOCANAUDIT" name="套餐审核" desc="">
+					<address name="套餐审核jsp页面" url="/taocan/taocanCheckList.jsp" />
+					<address name="套餐审核Action" url="/tuangou/tuangou!Check.action" />
+					<address name="套餐审核列表Action" url="/tuangou/tuangou!CheckList.action" />
+					<address name="套餐商家详情jsp页面" url="/tuangou/tuangou_sellerDetail.jsp" />
+					<address name="套餐详情jsp页面" url="/taocan/taocanDetail4Check.jsp" />
+				</operation>
+				<operation key="AGENT-EVENTAUDIT" name="活动审核" desc="">
+					<address name="审核活动列表jsp页面" url="/event/eventDetail4Check.jsp" />
+					<address name="审核活动详情Action" url="/seller/seller!Detail.action" />
+					<address name="审核活动商家详情jsp页面" url="/event/event_sellerDetail.jsp" />
+					<address name="审核活动列表Action" url="/event/event!CheckList.action" />
+					<address name="审核活动Action" url="/event/event!Check.action" />
+					<address name="审核活动列表jsp页面" url="/event/eventCheckList.jsp" />
+					<address name="审核活动详情Action" url="/event/event!Detail.action" />
+				</operation>
+				<operation key="AGENT-SHOPINFOAUDIT" name="商家介绍审核" desc="">
+					<address name="商家介绍审核jsp页面" url="/shopinfo/shopinfoCheckList.jsp" />
+					<address name="商家介绍审核Action" url="/seller/shopinfo/shopinfo!CheckList.action" />
+					<address name="商家详情jsp页面" url="/tuangou/tuangou_sellerDetail.jsp" />
+					<address name="商家介绍审核详情jsp页面" url="/shopinfo/shopinfoDetail4Check.jsp" />
+					<address name="商家介绍审核详情Action" url="/seller/shopinfo/shopinfo!Detail.action" />
+					<address name="商家介绍审核" url="/seller/shopinfo/shopinfo!Check.action" />
+				</operation>
+		</resource>
+		
+		<resource key="wam_order_manage" name="订单管理" desc="">
+				<operation key="Seller-TGORDERCHECK" name="团购订单验证" desc="">
+					<address name="订单验证列表jsp页面" url="/order/orderConfirm.jsp" />
+					<address name="验证团购订单Action" url="/order/order!ConfirmTuangouOrder.action" />
+					<address name="团购订单验证列表Action" url="/order/order!tuangouConfirmListByCheckCode.action" />
+					<address name="废除团购订单Action" url="/order/order!AbolishTuangouOrder.action"/>
+					<address name="订单验证消费列表jsp页面" url="/order/orderSale.jsp" />
+					<address name="订单验证码查询Action" url="/order/order!countByCheckCode.action" />
+				</operation>
+				<operation key="Seller-COMMODITYORDER" name="商品订单" desc="">
+					<address name="商品订单列表jsp页面" url="/orderheader/orderheaderList.jsp" />
+					<address name="商品订单列表Action" url="/order/order!ListOrderHeader.action" />
+					<address name="商品订单明细列表jsp" url="/orderheader/orderheaderDetail.jsp" />
+					<address name="商品订单头部明细Action" url="/order/order!OrderHeaderDetail.action" />
+					<address name="商品订单明细Action" url="/order/order!ListOrderBody.action" />
+					<address name="商品订单验证Action" url="/order/order!ConfirmOrderHeader.action" />
+					<address name="商品订单废除Action" url="/order/order!AbolishOrderHeader.action" />
+					<address name="商品订单接单Action" url="/order/order!AcceptOrderHeader.action" />
+					<address name="商品订单退回Action" url="/order/order!BackOrderHeader.action" />
+				</operation>
+				<operation key="Seller-TGORDERHISTORY" name="团购历史订单" desc="">
+					<address name="历史团购订单列表jsp页面" url="/order/orderStatistics.jsp" />
+					<address name="历史团购订单列表Action" url="/order/order!ListTuangouOrderStatistics.action" />
+				</operation>
+				<operation key="Seller-COMMODITYORDERHISTORY" name="商品历史订单" desc="">
+					<address name="历史商品订单列表jsp页面" url="/orderheader/historyCommodityOrderheader.jsp" />
+					<address name="历史商品订单列表Action" url="/order/order!ListOrderHeaderHistory.action" />
+					<address name="历史商品订单详情jsp页面" url="/orderheader/historyCommodityorderheaderDetail.jsp" />
+					<address name="历史商品订单详情Action" url="/order/order!ListOrderBody.action" />
+				</operation>
+				<operation key="ADMIN-ORDERQUERY" name="订单查询" desc="">
+					<address name="订单查询列表jsp页面" url="/order/orderSelect.jsp" />
+					<address name="订单查询列表Action" url="/order/order!tuangouOrderSelectList.action" />
+				</operation>
+		</resource>
+		
+		<resource key="wam_voucher_manage" name="代金券管理" desc="">
+				<operation key="Seller-MYVOUCHER" name="我的代金券" desc="">
+					<address name="本店代金券列表jsp页面" url="/voucher/voucherList.jsp" />
+					<address name="代金券列表Action" url="/voucher/voucher!List.action" />
+
+					<address name="代金券新增jsp页面" url="/voucher/voucherAdd.jsp"/>
+					<address name="代金券新增Action" url="/voucher/voucher!Insert.action"/>	
+					
+					<address name="代金券删除Action" url="/voucher/voucher!Delete.action"/>
+				</operation>
+				<operation key="Seller-MYVOUCHERAPPLY" name="我的申请" desc="">
+					<address name="申请兑换其他商家代金券的Action" url="/voucher/voucher!AskForExchange.action"/>
+					<address name="兑换时弹出窗口代金券列表JSP页面" url="/voucher/selMyVoucherList.jsp" />
+					<address name="我所申请的代金券列表JSP页面" url="/voucher/myAskForVoucherList.jsp" />
+					<address name="当前商家所申请的代金券列表Action" url="/voucher/voucher!MyAskForList.action" />
+				</operation>
+				<operation key="Seller-PROCESSVOUCHERAPPLY" name="处理申请" desc="">
+					<address name="其他商家申请我的代金券列表JSP页面" url="/voucher/askForMyVoucherList.jsp" />
+					<address name="其他商家申请我的代金券列表Action" url="/voucher/voucher!AskForMyVoucherList.action" />
+					<address name="审核关于本店代金券的Action" url="/voucher/voucher!DealVoucherExchange.action"/>
+				</operation>
+				<operation key="Seller-VOUCHERSEND" name="代金券发放" desc="">
+					<address name="发放本店所有代金券的JSP页面"  url="/voucher/grantVoucherList.jsp"/>
+					<address name="加载本店自有可发放代金券的Action" url="/voucher/voucher!ListMineVoucher.action"></address>
+					<address name="加载本店兑换的可发放代金券Action" url="/voucher/voucher!ListExchangedVoucher.action"></address>
+					<address name="发放本店自有代金券的Action" url="/voucher/voucher!dispathMySelfVocher.action"></address>
+					<address name="发放本店兑换的代金券Action" url="/voucher/voucher!dispathExchangedVocher.action"></address>
+				</operation>
+		</resource>
+		
+		<resource key="wam_device_manage" name="设备管理" desc="">
+				<operation key="ADMIN-ROUTER" name="路由器管理" desc="">
+					<address name="设备管理列表jsp页面" url="/router/routerList.jsp" />
+					<address name="设备管理列表Action" url="/router/router!List.action" />
+					<address name="设备管理详情jsp页面" url="/router/routerDetail.jsp" />
+					<address name="设备详情Action" url="/router/router!Detail.action" />
+					<address name="设备导出Action" url="/router/router!exportRouters.action" />
+
+					<address name="设备新增jsp页面" url="/router/routerAdd.jsp"/>
+					<address name="设备新增Action" url="/router/router!Insert.action"/>	
+
+					<address name="商家列表jsp页面" url="/selector/sellerList.jsp" />
+					<address name="商家列表Action" url="/seller/seller!List.action" />
+					
+					<address name="设备管理修改jsp页面" url="/router/routerModify.jsp"/>
+					<address name="设备管理修改Action" url="/router/router!Update.action"/>
+					
+					<address name="设备删除Action" url="/router/router!Delete.action"/>	
+				</operation>
+				<operation key="ADMIN-FIREWARE" name="固件管理" desc="">
+					<address name="固件管理列表jsp页面" url="/firmware/firmwareList.jsp" />
+					<address name="固件管理列表Action" url="/firmware/firmware!List.action" />
+					<address name="固件管理详情Action" url="/firmware/firmware!Detail.action" />
+					<address name="固件管理详情jsp页面" url="/firmware/firmwareDetail.jsp" />
+
+					<address name="固件管理新增jsp页面" url="/firmware/firmwareAdd.jsp"/>
+					<address name="固件管理新增Action" url="/firmware/firmware!Insert.action"/>
+					
+					<address name="固件管理修改jsp页面" url="/firmware/firmwareModify.jsp"/>
+					<address name="固件管理修改Action" url="/firmware/firmware!Update.action"/>
+				</operation>
+				<operation key="ADMIN-INSTRUCTION" name="指令管理" desc="">
+					<address name="指令管理列表jsp页面" url="/instruction/instructionList.jsp" />
+					<address name="指令管理列表Action" url="/instruction/instruction!List.action" />
+					<address name="指令管理详情Action" url="/instruction/instruction!Detail.action" />
+					<address name="指令管理详情jsp页面" url="/instruction/instructionDetail.jsp" />
+
+					<address name="指令管理新增jsp页面" url="/instruction/instructionAdd.jsp"/>
+					<address name="指令管理新增Action" url="/instruction/instruction!Insert.action"/>
+					
+					<address name="指令管理修改jsp页面" url="/instruction/instructionModify.jsp"/>
+					<address name="指令管理修改Action" url="/instruction/instruction!Update.action"/>
+				</operation>				
+		</resource>
+		
+		<resource key="wam_category_manage" name="类型管理" desc="">
+				<operation key="ADMIN-SELLERTYPE" name="行业类型" desc="">
+					<address name="行业类型jsp页面" url="/category/sellerCategory.jsp" />
+					<address name="行业类型Action" url="/common/category!findNodesNoCache.action"/>
+					
+					<address name="行业新增jsp页面" url="/category/sellerCategory.jsp"/>
+					<address name="行业新增Action" url="/common/category!SellerLevelInsert.action"/>
+					<address name="行业下一节点新增Action" url="/common/category!SellerNextLevelInsert.action"/>
+					
+					<address name="行业修改Action" url="/common/category!Update.action"/>		
+					
+					<address name="行业删除Action" url="/common/category!Delete.action"/>	
+				</operation>
+				<operation key="ADMIN-APPTYPE" name="APP类型" desc="">
+					<address name="APP类型列表jsp页面" url="/category/appCategory.jsp" />
+					<address name="APP类型Action" url="/common/category!findNodesNoCache.action"/>
+					
+					<address name="APP新增jsp页面" url="/category/appCategory.jsp"/>
+					<address name="APP类型新增Action" url="/common/category!APPLevelInsert.action"/>
+					<address name="APP类型下一节点新增Action" url="/common/category!APPNextLevelInsert.action"/>	
+					
+					<address name="APP删除Action" url="/common/category!Delete.action"/>	
+				</operation>
+				<operation key="ADMIN-COMODITYTYPE" name="商品类型" desc="">
+					<address name="分类列表Action" url="/tuangou/commodityType!listCommodityTypeTreeSellerSelf.action"/>
+					<address name="分类新增Action" url="/tuangou/commodityType!Insert.action"/>
+					<address name="分类删除Action" url="/tuangou/commodityType!Delete.action"/>
+					<address name="分类修改排序Action" url="/tuangou/commodityType!Update.action"/>
+					<address name="分类新增jsp页面" url="/commodity/commoditytypeList.jsp"/>
+				</operation>
+				<operation key="ADMIN-SHOPINFOTYPE" name="商家介绍类型" desc="">
+					<address name="本店介绍分类Action" url="/tuangou/commodityType!listShopInfoTypeTreeSellerSelf.action" />
+					<address name="本店介绍分类新增Action" url="/seller/shopinfo/shopInfoType!Insert.action" />
+					<address name="本店介绍分类删除Action" url="/seller/shopinfo/shopInfoType!Delete.action" />
+					<address name="本店介绍分类修改Action" url="/seller/shopinfo/shopInfoType!Update.action" />
+					<address name="本店介绍分类jsp页面" url="/shopinfo/shopinfotypeList.jsp" />
+				</operation>						
+		</resource>
+		
+		<resource key="wam_analysis_manage" name="统计分析" desc="">
+				<operation key="SELLER-VISITOR" name="访客记录" desc="">
+					<address name="访客记录列表jsp页面" url="/visitorLog/visitorLog.jsp" />
+					<address name="访客记录列表Action" url="/seller/seller!VisitorLogList.action" />
+				</operation>
+				<operation key="SELLER-REAL" name="实时跟踪" desc="">
+					<address name="实时跟踪列表jsp页面" url="/analysis/realData.jsp" />
+					<address name="实时跟踪列表Action" url="/analysis/realData!List.action" />
+				</operation>
+				<operation key="SELLER-BUSINESSANALYSIS" name="运营分析" desc="">
+					<address name="运营数据列表jsp页面" url="/seller/sellerOperateDataList.jsp" />
+					<address name="运营数据列表Action" url="/seller/seller!ListOperateData.action" />
+					<address name="运营数据列表Action" url="/seller/seller!sellersDataSummary.action" />
+					<address name="运营数据列表jsp页面" url="/seller/sellerDataList.jsp" />
+					<address name="运营数据每天列表Action" url="/seller/seller!SellerYearData.action" />
+					<address name="运营数据每月列表Action" url="/seller/seller!SellerMonthData.action" />
+					<address name="运营数据每年列表Action" url="/seller/seller!SellerDateData.action" />
+					<address name="运营数据总量列表jsp页面" url="/seller/sellerSummaryDataList.jsp" />
+					<address name="运营数据总量每天列表Action" url="/seller/seller!SellerSummaryDateData.action" />
+					<address name="运营数据总量每月列表Action" url="/seller/seller!SellerSummaryMonthData.action" />
+					<address name="运营数据总量每年列表Action" url="/seller/seller!SellerSummaryYearData.action" />
+				</operation>
+				<operation key="AGENT-SLLERINPUT" name="商家录入统计" desc="">
+					<address name="经销商商家录入按日统计Action" url="/distributor/distributor!EnterSellersSumByDay.action" />
+					<address name="经销商商家录入统计Action" url="/distributor/distributor!EnterSellersSum.action" />
+					<address name="经销商商家录入统计JSP" url="/distributor/enterSellersSum.jsp" />
+	
+					<address name="经销商商家录入按日统计导出Action" url="/distributor/distributor!exportSellersSumByDay.action" />
+					<address name="经销商商家录入统计导出Action" url="/distributor/distributor!exportSellersSum.action" />
+				</operation>
+				<operation key="SELLER-INBYTG" name="本店分析-按团购" desc="">
+					<address name="团购收入分析列表jsp页面" url="/analysis/inAnalysisByTuangou.jsp" />
+					<address name="团购收入分析列表Action" url="/analysis/analysis!InTuangouList.action" />
+				</operation>
+				<operation key="SELLER-INBYSHOP" name="本店分析-按商家" desc="">
+					<address name="商家收入分析列表jsp页面" url="/analysis/inAnalysisBySeller.jsp" />
+					<address name="商家收入分析列表Action" url="/analysis/analysis!InSellerList.action" />
+				</operation>
+				<operation key="SELLER-OUTBYTG" name="推广分析-按团购" desc="">
+					<address name="团购支出分析列表jsp页面" url="/analysis/outAnalysisByTuangou.jsp" />
+					<address name="团购支出分析列表Action" url="/analysis/analysis!OutTuangouList.action" />
+				</operation>
+				<operation key="SELLER-OUTBYSHOP" name="推广分析-按商家" desc="">
+					<address name="商家支出分析列表jsp页面" url="/analysis/outAnalysisBySeller.jsp" />
+					<address name="商家支出分析列表Action" url="/analysis/analysis!OutSellerList.action" />
+				</operation>
+				<operation key="SELLER-INOUTLIST" name="收支记录" desc="">
+					<address name="阿币流通列表jsp页面" url="/analysis/abInOut.jsp" />
+					<address name="阿币流通列表Action" url="/analysis/abInOut!List.action" />
+				</operation>			
+		</resource>
+		<resource key="wam_notice_manage" name="公告消息" desc="">
+				<operation key="ADMIN_AGENT-SELLERNOTICE" name="商家公告" desc="">
+					<address name="商家公告列表jsp页面" url="/notice/noticeList.jsp" />
+					<address name="商家公告列表Action" url="/notice/notice!List.action" />
+					<address name="商家公告详情jsp页面" url="/notice/noticeDetail.jsp" />
+					<address name="商家公告详情Action" url="/notice/notice!Detail.action" />
+					<address name="商家公告新增jsp页面" url="/notice/noticeAdd.jsp"/>
+					<address name="商家公告新增Action" url="/notice/notice!Insert.action"/>
+					
+					<address name="商家公告删除Action" url="/notice/notice!Delete.action"/>
+				</operation>
+				<operation key="SELLER-GROUPMSG" name="消息群发" desc="">
+					<address name="消息群发列表jsp页面" url="/sellernotice/sellerNoticeList.jsp" />
+					<address name="消息群发列表Action" url="/seller/notice/notice!List.action" />
+					<address name="消息群发新增jsp页面" url="/sellernotice/sellerNoticeAdd.jsp"/>
+					<address name="消息群发新增Action" url="/seller/notice/notice!Insert.action"/>	
+					
+					<address name="消息群发删除Action" url="/seller/notice/notice!Delete.action"/>	
+				</operation>
+				<operation key="SELLER-GROUPSMS" name="短信群发" desc="">
+					<address name="短信群发列表jsp页面" url="/smsmass/smsMassList.jsp" />
+					<address name="短信群发列表Action" url="/common/wamAbout.action" />
+				</operation>
+		</resource>
+	</resource-category>
+</domain>
