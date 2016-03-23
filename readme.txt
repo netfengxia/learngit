@@ -3,3 +3,4 @@ Creating a new branch is quick And simple.
 4.noff
 for stash before
 edit for cygin
+other paterner.
